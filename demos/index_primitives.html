@@ -1,0 +1,29 @@
+
+
+<script>
+
+  // infinity, not to be used for operations, but can be used to test for equality
+  console.log(1/0);
+
+  // Becomes a floating point
+  console.log(Number.MAX_SAFE_INTEGER+1);
+  console.log(Number.MAX_SAFE_INTEGER+33);
+  console.log(0.1 + 0.2 === 0.3);
+
+  // Don't do this.
+  // let same = Number.EPSILON > abs(0.3 - (0.1 + 0.2))
+
+  // NaN
+  console.log(Infinity / Infinity);
+
+  // isNaN
+  console.log(isNaN(NaN));
+
+  // isFinite
+  // isInteger
+  // isSafeInteger
+
+  console.log(typeof NaN);
+  console.log(typeof undefined);
+
+</script>

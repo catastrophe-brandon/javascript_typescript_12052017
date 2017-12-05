@@ -1,3 +1,72 @@
 <script>
+
+  let t;
   console.log('test');
+  console.log(typeof t);
+
+  t = 2;
+  console.log(typeof t);
+
+  t = 'Hello World';
+  console.log(typeof t);
+
+  t = false;
+  console.log(typeof t);
+
+  // ES3 - 1999
+  // ES2015 = ES6
+
+  t = Symbol('my symbol');
+  console.log(typeof t);
+
+  t = {
+    id: 1,
+  };
+
+  console.log(typeof t);
+
+  // ==== Scoping Discussion ====
+  //
+  // Difference between an object and a primitive
+  // In memory there are 4 scopes we can work with
+  // 1. Global scope
+  // 2. Script scope
+  // 3. Stack (stack frames)
+  // 4. Heap - Dynamically Allocated Memory
+
+  // let is a keyword that allows us to declare mutable variables
+  // const allows us to declare immutable variables
+
+  // Variable declared outside a function with var - global scoped
+  // Variable declared outside a func with let or const - script scope
+  // Variable declared inside a func is scoped to the function
+
+  // Objects are allocated from the heap.
+  // variables and properties both hold values, but variables are different from what's on the heap
+
+  // Heap stuff hangs around forever. Variables only hang around for a short period of time.
+  // Heap data is never tied to a func invocation or script. It exists "permanently".
+
+  t = [1, 2, 3, 4, 5];
+  console.log(typeof t);
+
+  // an array is an object, not a primitive.
+
+  t = function() {
+
+  };
+  console.log(typeof t);
+
+  // functions are objects but the log will print 'function'
+  // functions are "callable objects"
+
+  // The array allocated above was allocated on the heap.
+  // The function created a "function object" on the heap.
+  // Both will be garbage collected when they are no longer referenced.
+
+  // Difference between an object literal and JSON
+
+
+
+
 </script>
