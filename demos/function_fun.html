@@ -1,0 +1,27 @@
+<script>
+
+  'use strict';
+
+  // syntax of arrow functions
+  const doIt = (a, b, c) => {
+    console.log(a, b, c);
+    return [a, b, c];
+  };
+
+  const bestLanguageInTheWorld = () => 'Hindi';
+  console.log(doIt(1, 2, 3));
+  console.log(bestLanguageInTheWorld());
+
+  const person = () => ({
+    name: 'Bob'
+  });
+
+  const mapMyObject = ({name}) => ({name});
+
+  mapMyObject({ name: 'Jane'});
+
+  // as a general rule, always use arrow functions with const unless your function needs to be part of a
+  // prototype chain, otherwise it needs to be a keyword function ==>call-site this<==.
+
+
+</script>

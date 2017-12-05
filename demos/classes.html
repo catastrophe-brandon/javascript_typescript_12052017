@@ -1,0 +1,32 @@
+<script>
+  'use strict';
+
+  class Person {
+
+    constructor(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+    }
+
+    getFullName() {
+      // template literal
+      return `${this.firstName} ${this.lastName}`;
+    }
+  }
+
+  const person = new Person('Bob', 'Agile Instructor');
+  const person2 = new Person('Eric', 'JS Instructor');
+  console.dir(person);
+  console.log(person.getFullName());
+  console.log(person === person2);
+  console.log(Object.getPrototypeOf(person) === Object.getPrototypeOf(person2));
+
+  // Purpose of prototype inheritance is to share functions. (Ask Brendan Ike)
+  // Closures should not be used to share functions.
+
+  // RXJS is the new stuff for Angular JS - a stream of async operations.
+  // TODO: Look up Observable versus Promise
+
+  // Try picking apart code by running it in Chrome.
+
+</script>

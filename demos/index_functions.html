@@ -1,0 +1,47 @@
+<script>
+
+  'use strict';
+
+  function doIt(a, b, c) {
+    console.log('did it');
+    // The trick to passing as many argument is needed. See varargs in C.
+    // arguments is a simple object, not an array.
+    // Array.from converts any iterable to an Array
+    console.log(Array.from(arguments));
+  }
+
+  // functions are objects
+  doIt.someProp = 'derp';
+  doIt();
+
+  // console.dir prints out an object's structure
+  // not an official web browser API function
+  console.dir(doIt);
+  console.log(doIt.toString());
+
+  // code introspection, some frameworks use toString() on functions
+
+  // arrow function
+  // const doIt = () => console.log('did it');
+  doIt.someProp = 'pred';
+
+  doIt(1, 2, 3, 4, 5, 6);
+
+  // function overload is not possible in JS
+  // simulation of function overloading is done conditionally based upon input data.
+
+  // Shiny new thing in JS - the "rest" operator.
+
+  // function doIt(a, b, ...c) {
+  //
+  // }
+
+  // default values can be assigned as of ES2015
+
+  let h = [1, 2, 3, 4, 5, 6];
+  doIt(h)
+
+  // Example of using the spread operator
+  doIt(...h)
+
+</script>

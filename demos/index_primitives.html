@@ -26,4 +26,152 @@
   console.log(typeof NaN);
   console.log(typeof undefined);
 
+  'use strict';
+  // Boolean types
+  let t = true;
+
+  // Truthy and falsy
+
+  // Falsy
+  // 0
+  // ''
+  // false
+  // undefined
+  // null
+  // NaN
+
+  if (0) {
+    console.log('truthy');
+  } else {
+    console.log('falsy');
+  }
+
+  // and, or operators
+  // let t = 0 || 1;
+  // console.log(t);
+  //
+  // // or is short-circuiting
+  //
+  // // === Arrays ===
+  // // empty array of 10 items
+  // let nums = new Array(10);
+  // console.log(nums);
+  //
+  // // array literal
+  // let nums2 = [1, 2, 3, 4, 5];
+  // console.log(nums2);
+  //
+  // // array mutation
+  // let newLength = nums2.push(6);
+  // console.log(nums2);
+
+  // array immutable operations
+  // let removedValue = nums2.pop();
+  // newLength = nums.length;
+  // console.log(removedValue);
+  // console.log(nums);
+  // console.log(newLength);
+
+  // add to the beginning of an array
+  // nums.unshift(0);
+  // console.log(nums);
+
+  // remove from front of array
+  // let frontItem = nums.shift()
+  // newLength = nums.length;
+  // console.log(frontItem);
+  // console.log(nums);
+  // console.log(newLength);
+
+  // splice removes and inserts
+  // nums.splice(2, 1, 6);
+
+  // reverse the order of the array
+  // nums.reverse()
+
+  t = 'poopy';
+  let c = Array(t);
+  console.log(c.reverse());
+
+  // === Immutable array operations ===
+  'use strict';
+  let nums_immutable = [1, 2, 3, 4, 5];
+
+  let newNums = nums_immutable.concat(6);
+
+  // console.log all the things
+  // concat produces a new array
+
+  // Reminder: triple equals checks value and type - with type coercion
+  // dynamically vs statically typed
+  // strongly vs loosely typed languages (how much type coercion is involved)
+
+
+  let things = [
+    { id:1, name: 'apple'},
+    { id:2, name: 'orange'}
+  ];
+
+  // Note: concat does not copy contents, only structure (shallow copy)
+  // Note: arrays of primitives will be copied. For objects only references get copied.
+  // Note: Both arrays point to same objects.
+
+  // === array removal ===
+  console.log('array removal');
+  let missing_one = nums_immutable.slice(0, nums_immutable.length - 1)
+  console.log(nums_immutable);
+  console.log(missing_one);
+
+  // Note: Concat also takes an array as input, will flatten down original object
+
+  console.log('Slicing things from immutable');
+  newNums = nums_immutable.slice(1)
+  console.log(newNums);
+
+  // equivalent of splice
+  console.log('Splicing with immutability');
+  newNums = nums_immutable.slice(0,2).concat(6).concat(nums_immutable.slice(3));
+  console.log(newNums);
+
+  // === Map (list comprehension) ===
+
+  let nums = [1, 2, 3, 4, 5];
+  const squareNums = nums.Map(function(num) {return num**2});
+  console.log(squareNums);
+
+  // == Filter all numbers less than false
+  const lessThan4Nums = nums.filter(num => num < 4);
+  console.log(lessThan4Nums);
+
+  const shinyNewNums = nums.filter(num => num === 3);
+  console.log(shinyNewNums);
+
+  // Removing a single item from a large list (better for perf)
+
+  // Returns the first index of matching num
+  const numIndex = nums.findIndex(num => num === 2);
+
+  // next delete the item with the index and you're done
+
+  // === Reduce ===
+  // Redux = state management tool, useful with Angular.
+  // Decide whether or not to cover Redux, really cool capabilities.
+
+  // reduce array to single sum
+  const sum = nums.reduce((acc, current) => {
+    console.log('acc: ', acc, 'current: ', current);
+    return acc + current }, 0);
+  console.log(sum);
+
+  // 2-D Arrays
+  const matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ];
+
+  // Note: ArrayBuffer  - UInt32Array();
+  //
+
+
 </script>

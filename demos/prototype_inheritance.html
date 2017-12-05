@@ -1,0 +1,43 @@
+<script>
+  // class P {}
+  // typeof P
+
+  // monomorphic, polymorphic, megamorphic
+  // In the JS engine, constructing objects produces classes inside the engine.
+  // object construction is not symmetrical. put objects in same order every time.
+  // arrays are objects with numeric properties.
+
+  const sergio = {
+    name: 'Sergio',
+    amt: 100,
+    address: {
+      street: '1600 Pennsylvania Ave.',
+      city: 'Washington, DC',
+    }
+  };
+
+  const sebastian = Object.create(sergio);
+  sebastian.name = 'Sebastian';
+
+  // Object.create added in ES5
+  // sebastian inherits from sergio
+  console.log(Object.getPrototypeOf(sebastian) === sergio);
+  console.log(sebastian.amt);
+
+  console.dir(sebastian);
+  sergio.amt = 300;
+
+  sebastian.amt = 15;
+  console.log(sebastian.amt);
+
+  delete sebastian.amt;
+  console.log(sebastian.address.city);
+
+  sebastian.address.city = 'Paris, TX';
+  console.log(sebastian);
+
+  sebastian.address = {city: 'Paris, TX'};
+
+  // Node: this applies for all objects, including functions.
+
+</script>
