@@ -1,0 +1,15 @@
+<script>
+    // No built in mechanism to terminate a promise if it never resolves
+    // Promise.race() sets up a race between the two promises.
+    // Make a rest call with one, have a 2nd one with a fixed timeout.
+    // If 2nd timeout expires before rest call finishes it wins the race.
+
+    Promise.race([
+        new Promise(
+                resolve =>
+                    setTimeout(
+                        () => resolve('a'), 2000)
+            )
+    ]);
+
+</script>

@@ -1,0 +1,23 @@
+<script>
+    'use strict';
+
+    // these are essentially the exact same thing
+
+    const p1 = new Promise(resolve => setTimeout(() => resolve('a'), 2000));
+
+    const p = new Promise(function(resolve) {
+        setTimeout(function () {
+            resolve('a');
+        }, 2000);
+    })
+
+    const p2 = new Promise(resolve => setTimeout(() => resolve('a'), 2000));
+    const p3 = new Promise(resolve => setTimeout(() => resolve('a'), 2000));
+    const p4 = new Promise(resolve => setTimeout(() => resolve('a'), 2000));
+    const p5 = new Promise(resolve => setTimeout(() => resolve('a'), 2000));
+
+    p2.then(results => console.log('resolved: ' + results));
+
+    Promise.all([p1, p2, p3, p4]).then(results => console.log('all done: ' + results));
+
+</script>

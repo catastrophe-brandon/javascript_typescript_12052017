@@ -1,0 +1,41 @@
+<html>
+<head></head>
+<body>
+<h1>Do you folks like coffee? Coffee from the hills?</h1>
+<a href="https://www.youtube.com/watch?v=VFURd_EOIuU">Duncan Hills Coffee Jingle</a>
+
+<script>
+
+    // Code provided by Eric for making the request
+    // ============================================
+    //
+    // const xhr = new XMLHttpRequest();
+    // xhr.addEventListener('readystatechange', function() {
+    //     if (xhr.status === 200 && xhr.readyState === 4) {
+    //         // remove console
+    //         console.log(JSON.parse(xhr.responseText));
+    //     }
+    // });
+    //
+    // xhr.open('GET', 'http://localhost:3050/cars');
+    // xhr.send();
+
+    function getData(url) {
+        return new Promise(function blah(resolve, reject) {
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url);
+            xhr.send();
+            // eventListener is async
+            xhr.addEventListener('readystatechange', function () {
+                if (xhr.status === 200 && xhr.readyState === 4) {
+                    resolve(JSON.parse(xhr.responseText));
+                }
+            });
+        });
+    }
+
+    getData('http://localhost:3050/cars').then(cars => console.log(cars));
+</script>
+</body>
+</html>
