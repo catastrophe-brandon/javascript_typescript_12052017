@@ -29,4 +29,54 @@
 
   // Try picking apart code by running it in Chrome.
 
+  // === New classes versus old constructor style syntax ===
+
+  // First, old style
+  function Person2(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  Person2.prototype.getFullName = function () {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  const person2 = new Person2('Bob', 'Agile Instructor');
+
+  console.dir(person);
+  console.dir(person2);
+
+
+  // Inheritance from another class
+  class Student extends Person {
+
+    constructor(studentId, firstName, lastName) {
+      super(firstName, lastName);
+      this.studentId = studentId;
+    }
+
+    getRecordInfo() {
+      return this.studentId + ' ' + this.lastName + ' ' + this.firstName;
+    }
+  }
+
+  const student = new Student(1, 'Bob', 'Agile Instructore');
+  console.log(student.getRecordInfo());
+  console.log(student.getFullName());
+  console.dir(student);
+
+  // Old-school inheritance example
+
+  function Student2(studentId, firstName, lastName) {
+    this._super_(firstName, lastName);
+    this.studentId = studentId;
+  }
+
+  Student2.prototype = Object.create(Person2.prototype);
+  Student2.prototype.constructor = Student2;
+  Student2.prototype._super_ = Person2;
+
+
+
+
 </script>

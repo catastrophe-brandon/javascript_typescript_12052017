@@ -1,0 +1,51 @@
+<script>
+
+
+  const firstName = "Abhilash";
+
+  const propName = 'lastName';
+  const propValue = 'Suresh';
+
+  let person = {
+    // when key and value have the same stuff interpreted as firstName: "Abhilash"
+    firstName,
+
+    // to expand a variable as a key
+    [ propName ]: propValue,
+
+    // short-hand properties
+    getFullName: function() {
+      return this.firstName + ' ' + this.lastName();
+    },
+
+    // also short-hand properties
+    get age() {
+      return this._age;
+    },
+
+    set age(value) {
+      this._age = value;
+    },
+  };
+
+  person = {
+    firstName: 'Bob',
+    lastName: 'Smith',
+  };
+
+  // prevent inheritance for a specific object on the heap
+  Object.preventExtensions(person);
+  person.age = 65;
+
+  // prevents from reconfiguring existing properties on an instance
+  Object.seal(person);
+
+  // irreversible, object cannot be unfrozen
+  Object.freeze(person);
+
+  // circumvent freezing
+  const newPerson = Object.assign({}, person);
+  // Object.assign copies the properties into the new object.
+
+
+</script>

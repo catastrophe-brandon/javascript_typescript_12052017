@@ -1,0 +1,38 @@
+<script>
+  'use strict';
+  //=== objects and object properties ===
+  const person = {
+    firstName: 'Bob',
+    lastName: 'Smith',
+  };
+
+  console.dir(person);
+
+  person.age = 60;
+
+  delete person.age;
+  console.log(person.firstName);
+  console.log(person['firstName']);
+  person['this is not a valid variable name'] = 'some value';
+
+  person[0] = 'a number';
+
+  // all property names are always strings without exception
+  // for a real map use the Map object.
+  // JS objects require keys to be a string.
+
+  // check if an object has a property
+  // 'in' honors the prototype chain
+  console.log(firstName in person);
+
+  // check if person has a firstName property directly (no prototype chaining, immediate object only)
+  console.log(person.hasOwnProperty('firstName'));
+
+  // lists all the keys/properties/indexes inside an object
+  console.log(Object.keys(person));
+
+  // Object that inherits from nothing
+  const myObject = Object.create(null);
+
+
+</script>
