@@ -49,7 +49,8 @@ Example:
 
  Tasks are the result of creation of an async operation (function call).
  
- Generally: Function call == Event Created and added to queue.
+ Generally: **ASYNC** Function call == Event Created and added to queue.
+ 
 
 ## UI/JS Sequence Diagram
 
@@ -78,7 +79,4 @@ Function call => Stack Frame - x is defined on stack frame => Callback function 
 Stackframe loading is expensive because it may involve I/O. 
 Commonly used because it's intuitive, but it's perf intensive.
 
-
-
-
-
+Note: In JS, all the heap is literally the process heap.
