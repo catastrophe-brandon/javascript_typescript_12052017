@@ -1,0 +1,51 @@
+<script>
+
+  'use strict';
+
+  setTimeout(function () {
+    console.log('made it here...');
+  }, 2000);
+
+  setTimeout(function () {
+    console.log('today is a nice day...');
+  }, 2000);
+
+  console.log('this is fun');
+
+  // Note: Nested callbacks to ensure order of execution == pyramid of doom.
+  function allDone() {
+    console.log('all done');
+  }
+
+  // Write code to ensure allDone exec'd after all timeouts, regardless of duration.
+
+  let counter = 0;
+  counter++;
+  setTimeout( function() {
+    console.log('task1');
+    counter--;
+    if (counter === 0) allDone();
+  }, 2000);
+
+  setTimeout( function() {
+    console.log('task2');
+
+  }, 1000);
+
+  setTimeout( function() {
+    console.log('task3');
+  }, 2000);
+
+  setTimeout( function() {
+    console.log('task4');
+  }, 3000);
+
+  allDone();
+
+
+  // solution to this kind of problem is "promises"
+  // many promise implementations available
+  // we use the built-in one by the JS engine.
+
+  // all callbacks invoked through the JS engine go into a special queue
+</script>

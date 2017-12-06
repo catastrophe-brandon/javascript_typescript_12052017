@@ -1,0 +1,66 @@
+<script>
+  // in-class code exercises for teaching/learning promises
+
+  'use strict';
+
+  // Example Promise implementation to see the inner workings.
+  // =========================================================
+  //
+  // class Promise {
+  //
+  //   constructor(fn) {
+  //     this.successFns = [];
+  //
+  //     const resolveFn = (result) => {
+  //       this.successFns.forEach(fn => fn(result));
+  //     };
+  //
+  //     const rejectFn = () => {};
+  //     fn(resolveFn, rejectFn);
+  //   }
+  //
+  //   then(fn) {
+  //     this.successFns.push(fn);
+  //     return new Promise();
+  //   }
+  //
+  // }
+
+
+  // Expected outcome of a promise:
+  // Yes, No, Resolve, Reject
+
+  // Example: marriage relationship in code
+
+  // Note: Pay attn to difference between defining and invoking a function
+  // function keyword - define the function
+  // function name followed by parens == invoking the function
+  //
+  const seyfaddin = new Promise(function youngLady(resolve, reject) {
+    setTimeout(function() {
+      // she says yes
+      resolve('my mom and dad are making me...');
+      // reject('Fell in love with Igor');
+    }, 4000);
+  });
+
+  // the .then() registers the function for future execution.
+  seyfaddin.then(function(results) {
+    console.log('yay she said yes!(?)');
+    console.log(results);
+    return new Promise(function findAPlace(resolve) {
+      setTimeout( function() {
+        resolve('We are going to McDonald\'s Playplace');
+      }, 4000);
+    });
+  }).then(function(results) {
+    console.log(results);
+  }).catch(function (results){
+    console.log('she said no');
+    console.log(results);
+  });
+
+  console.log('seyfaddin is waiting');
+
+
+</script>
