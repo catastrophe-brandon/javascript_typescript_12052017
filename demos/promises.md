@@ -16,7 +16,12 @@ Browsers typically only have 2 queues, but Node has 4 queues.
 
 Promises added to the language in 2015.
 
-Promise API hides all the closures so we can avoid the pyramid of doom.
+Promise API hides all the closures so we can avoid the pyramid of doom. 
+By wrapping async operations.
 Promises remove the need of lexical scope and closures by moving it into the promise API.
 
 [Promise anti-patterns](https://github.com/petkaantonov/bluebird/wiki/Promise-anti-patterns)
+
+Catch automatically returns a resolved promise unless there's some sort of a rejection.
+
+ES2017 - async and await uses generators and promises to build yet another layer of abstraction
